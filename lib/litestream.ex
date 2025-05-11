@@ -118,7 +118,7 @@ defmodule Litestream do
   def handle_continue(:start_litestream, state) do
     {:ok, port_pid, os_pid} =
       :exec.run_link(
-        "#{state.bin_path} replicate #{state.database} #{state.replica_url}",
+        "#{state.bin_path} replicate",
         [
           :monitor,
           {:env,
